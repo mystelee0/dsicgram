@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.updateModal-overlay{
+	position: fixed;
+	top: 0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.7);
+	display:none;
+	justify-content:center;
+	align-items:center;
+	z-index:1000;
+	
+}
+
+.updateModal-content{
+	background:white;
+	padding:20px;
+	border-radius:10px;
+	width:350px;
+	height:500px;
+	text-align:center;
+	box-shadow:0 4px 8px rgba(0,0,0,0.2);
+	position:relative;
+}
+
+.updateModal-close{
+	position:absolute;
+	top:10px;
+	right:10px;
+	font-size:20px;
+	cursor:pointer;
+}
+
+.updateTitle{
+	font-size:20px;
+	margin-bottom:15px;
+}
+
+.updateFileTitle{
+	padding:10px;
+	margin-top:15px;
+	text-align:left;
+}
+#updateInputFile{
+	margin-bottom:20px;
+}
+#fileNames{
+	width:300px;
+	height:150px;
+	margin:10px;
+}
+.updateComment{
+ 	width:300px;
+	height:50px;
+	margin:10px;
+	resize:none;
+	white-space:pre-wrap;
+	wrap:hard;
+}
+
+#updatePostBtn{
+	width:100px;
+	height:30px;
+	position:absolute;
+	right:20px;
+	bottom:10px;
+	color:white;
+	background-color:#33ccff;
+	border-radius:5px;
+	border:none;
+	
+	font-size:18px;
+}
+
+#updatePostBtn:hover{
+	background-color: #4285F4;
+}
+.deleteImgBtn{
+	width:50px;
+	height:30px;
+	border:none;
+	border-radius:5px;
+	background-color:white;
+	
+	position:absolute;
+	top:30px;
+	right:10px;
+}
+.updateModal-overlay.active{
+	display:flex;
+	
+}
+body.modal-open{
+	overflow: hidden; /* 스크롤 비활성화 */
+}
+
+@media (max-width: 900px) {
+	.updateModal-overlay.active{
+		display:flex;
+		flex-direction:column;
+	}
+	.image-slider.update-image-slider {
+		width:90%;
+		height:40%;
+ 	}
+ 	.updateModal-content{
+ 		height:55%;
+ 	}
+ 	.update-image-slider .slide {
+ 		margin: 0 auto;
+ 		width:100%;
+ 		object-fit:contain;
+ 	}
+ 	#fileNames{
+ 		height:100px;
+ 	}
+	#updateInputFile{
+		margin-bottom:10px;
+	}
+	#updatePostBtn{
+		bottom:20px;
+	}
+}

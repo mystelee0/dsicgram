@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 회원가입 폼 */
+#wrapper {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    width: 500px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* 제목 */
+h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.row.rowBtn {
+	text-align:right;
+	position:relative;
+	right:9%;
+}
+/* 각 입력 필드 스타일 */
+.row {
+    width: 100%;
+    margin: 15px 0;
+    text-align:left;
+    position:relative;
+}
+
+.row input {
+    width: 60%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.row input:focus {
+    border-color: #3897f0;
+    outline: none;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin:3px;
+}
+
+button:hover {
+    background-color: #007bff;
+}
+
+/* 아이디 중복 체크 버튼 */
+#idcheckbtn {
+    background-color: #f0f0f0;
+    color: #3897f0;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    width: 90px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size:12px;
+    position:relative;
+    left:72%;
+}
+
+#idcheckbtn:hover {
+    background-color: #e1e1e1;
+}
+
+/* 취소 버튼 */
+#cancelBtn {
+    background-color: transparent;
+    color: #aaa;
+    border: 1px solid #aaa;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#cancelBtn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 하단 텍스트 */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.footer a {
+    color: #3897f0;
+    text-decoration: none;
+}
+label {
+	display:inline-block;
+	width:30%;
+	text-align:justify;
+	margin-top:8px;
+	vertical-align:middle;
+}
+.label::after {
+  content: ''; /* 여백을 추가하여 텍스트의 끝을 맞춤 */
+  display: inline-block;
+  width: 100%;
+}
+/* dialog 요소 기본 스타일 */
+dialog {
+  width: 300px; /* 적당한 너비 */
+  padding: 20px; /* 여백 */
+  border: none; /* 기본 border 없애기 */
+  border-radius: 8px; /* 둥근 모서리 */
+  background-color: #fff; /* 흰색 배경 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 16px; /* 기본 텍스트 크기 */
+  z-index: 1000; /* 다른 요소 위에 위치 */
+}
+
+/* 다이얼로그가 화면 중앙에 오도록 하기 */
+dialog::backdrop {
+}
+
+dialog {
+  position: fixed;
+  width:300px;
+  height:120px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 화면 중앙 정렬 */
+  margin:0;
+}
+
+/* 텍스트 스타일 */
+.customText {
+  margin-bottom: 20px; /* 텍스트와 버튼 간 간격 */
+  font-size: 18px; /* 텍스트 크기 */
+  color: #333; /* 텍스트 색 */
+  line-height: 1.5; /* 줄 간격 */
+}
+
+/* 닫기 버튼 스타일 */
+.cCloseBtn {
+  position: absolute;
+  bottom: 10px; /* 아래에서 10px 간격 */
+  right: 10px; /* 오른쪽에서 10px 간격 */
+  padding: 10px 20px;
+  background-color: #33ccff; /* 버튼 색상 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cCloseBtn:hover {
+  background-color: #4285F4; /* 버튼 hover 시 색상 */
+}

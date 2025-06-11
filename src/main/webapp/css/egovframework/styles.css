@@ -1,0 +1,364 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size:16px;
+}
+html{
+}
+body {
+    background-color: #343a40;
+    /*width:500px; 추가*/
+    
+    margin: 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    /*세로*/
+    flex-direction:column; 
+    height:100%;
+}
+#headerUserInfo{
+	margin-left:5px;
+	width:100px;
+	display:flex;
+	align-items:center;
+}
+#headerUserId{
+
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    padding: 10px 30px;
+    padding-right:10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    height:70px;
+    position:fixed;
+    top:0px;
+    z-index:900;
+    border:2px solid black;
+    border-radius:10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    padding: 10px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    height:50px;
+    position:fixed;
+    bottom:0px;
+    
+    border:2px solid black;
+    border-radius:10px;
+}
+.footer .icons {
+	display: flex;
+    justify-content: space-between;
+	width:500px;
+}
+.footer .icons .icon {
+	width:120px;
+	height:40px;
+	background-color: white;/*#0095f6;*/
+    font-size: 20px;
+    color:black;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer .icons .icon:hover {
+    transform: scale(1.05); /* 버튼 크기 확대 */
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .search-bar input {
+    width: 250px;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+}
+
+.posts{
+	display:flex;
+	gap:20px;
+	flex-wrap:wrap;
+}
+/* Main Feed Styles */
+.main-feed {
+    width:100%;
+    padding: 10px;
+    margin-top:80px;
+}
+
+.post {
+	width:24%;
+	
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+    
+    
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.post-user-image {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.post-user-image:hover{
+	cursor: pointer;
+}
+.post-header .username {
+    font-weight: bold;
+}
+
+
+.post-image {
+    width: 100%;
+    height: auto;
+}
+
+.post-footer {
+    padding: 15px;
+}
+.likeCnt{
+	padding:5px;
+	
+}
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.post-actions div {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+ .post-caption { 
+    font-size: 14px;
+    color: #333;
+    display:flex;
+    gap:5px;
+}
+
+.post-caption .username {
+    font-weight: bold;
+}
+.showComment{
+	display:inline-block;
+	white-space:pre-wrap;
+	wrap:hard;
+	overflow:auto;
+	scrollbar-width: none;
+	resize:none;
+	text-overflow:ellipsis;
+	height:2em;
+	width:300px;
+	font-size:16px;
+}
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-feed {
+        width: 100vw;
+        
+    }
+    .posts{
+    	justify-content:center;
+    }
+    .post {
+    	width:90%;
+/*     	margin:auto; */
+    }
+    .navbar {
+    	width:100%;
+    }
+    .navbar .logo {
+    	width:30%;
+    	font-size:20px;
+    	
+    }
+    .navbar .search-bar {
+    	width:40%;
+    }
+    .navbar .search-bar input{
+    	width:100%;
+    }
+}
+
+
+.hamburger {
+  position: absolute;
+  right:5%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* 메뉴 아이콘 스타일 (햄버거 아이콘) */
+.menu-icon .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #333;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right:-20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+	width:100px;
+	
+}
+
+.button-container.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 수정/삭제 버튼 스타일 */
+.updatePostBtn, .deletePostBtn {
+	display:block;
+	padding: 10px;
+	font-size: 20px;
+	color: #333;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-bottom: 1px solid #eee;
+}
+
+.updatePostBtn:last-child, .deletePostBtn:last-child {
+  border-bottom: none;
+}
+
+.updatePostBtn:hover, .deletePostBtn:hover {
+  background-color: #f0f0f0;
+}
+
+.updatePostBtn:active, .deletePostBtn:active {
+  background-color: #e0e0e0;
+}
+
+/* dialog 요소 기본 스타일 */
+dialog {
+  width: 300px; /* 적당한 너비 */
+  padding: 20px; /* 여백 */
+  border: none; /* 기본 border 없애기 */
+  border-radius: 8px; /* 둥근 모서리 */
+  background-color: #fff; /* 흰색 배경 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 16px; /* 기본 텍스트 크기 */
+  z-index: 1000; /* 다른 요소 위에 위치 */
+}
+
+/* 다이얼로그가 화면 중앙에 오도록 하기 */
+dialog::backdrop {
+}
+
+dialog {
+  position: fixed;
+  width:300px;
+  height:120px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 화면 중앙 정렬 */
+  
+  
+}
+
+/* 텍스트 스타일 */
+.customText {
+  margin-bottom: 20px; /* 텍스트와 버튼 간 간격 */
+  font-size: 18px; /* 텍스트 크기 */
+  color: #333; /* 텍스트 색 */
+  line-height: 1.5; /* 줄 간격 */
+}
+.cAlertBtn{
+	width:180px;
+	position: absolute;
+  bottom: 10px; /* 아래에서 10px 간격 */
+  right: 10px; /* 오른쪽에서 10px 간격 */
+  display:flex;
+  justify-content:right;
+}
+/* 닫기 버튼 스타일 */
+.cCloseBtn, .cancelBtn{
+  
+  padding: 10px 20px;
+  background-color: #33ccff; /* 버튼 색상 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left:5px;
+}
+
+.cCloseBtn:hover , .cancelBtn:hover{
+  background-color: #4285F4; /* 버튼 hover 시 색상 */
+}
+
+
+.likeUsers{
+	display:none;
+}

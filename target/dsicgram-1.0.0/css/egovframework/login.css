@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+/* 로그인 박스 스타일 */
+#loginForm {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    width: 400px;
+    padding: 40px 40px 30px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius:10px;
+}
+
+/* 제목 */
+h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 입력 필드 */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #3897f0;
+    outline: none;
+}
+
+/* 로그인 버튼 */
+#loginForm button {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    margin:3px;
+}
+
+#loginForm button:hover {
+    background-color: #007bff;
+}
+
+/* 기타 버튼 (회원가입) */
+#registerButton {
+    background-color: transparent;
+    color: #3897f0;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: underline;
+}
+
+        /* dialog 요소 기본 스타일 */
+dialog {
+  width: 300px; /* 적당한 너비 */
+padding: 20px; /* 여백 */
+border: none; /* 기본 border 없애기 */
+border-radius: 8px; /* 둥근 모서리 */
+background-color: #fff; /* 흰색 배경 */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+text-align: center; /* 텍스트 중앙 정렬 */
+font-size: 16px; /* 기본 텍스트 크기 */
+z-index: 1000; /* 다른 요소 위에 위치 */
+}
+
+/* 다이얼로그가 화면 중앙에 오도록 하기 */
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
+position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+dialog {
+  position: fixed;
+  width:300px;
+  height:120px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 화면 중앙 정렬 */
+  margin:0;
+}
+
+/* 텍스트 스타일 */
+.customText {
+  margin-bottom: 20px; /* 텍스트와 버튼 간 간격 */
+font-size: 18px; /* 텍스트 크기 */
+color: #333; /* 텍스트 색 */
+line-height: 1.5; /* 줄 간격 */
+}
+
+/* 닫기 버튼 스타일 */
+.cCloseBtn {
+  position: absolute;
+  bottom: 10px; /* 아래에서 10px 간격 */
+right: 10px; /* 오른쪽에서 10px 간격 */
+padding: 10px 20px;
+background-color: #33ccff; /* 버튼 색상 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cCloseBtn:hover {
+  background-color: #4285F4; /* 버튼 hover 시 색상 */
+}

@@ -1,0 +1,37 @@
+services:
+  web:
+    container_name: dsicgram  # --name 옵션과 동일
+    image: dsicgram
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - /c/eclipse/eclipse-workspace/dsicgram/src/main/resources/static:/usr/local/tomcat/static
+      - /c/eclipse/eclipse-workspace/dsicgram/src/main/resources/profile:/usr/local/tomcat/profile
+    environment:
+      - ENV_VAR=value
+      - DB_HOST=mysql # DB 연결을 위한 환경 변수
+      - DB_PORT=3306
+      - DB_NAME=dsic # MySQL 데이터베이스 이름
+      - DB_USER=root # MySQL 사용자 이름
+      - DB_PASSWORD=1234 # MySQL 비밀번호
+    depends_on:
+      - db  # mysql 서비스가 먼저 실행되어야 함
+  
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234 # MySQL root 비밀번호
+      MYSQL_DATABASE: dsic # MySQL 초기 데이터베이스 이름
+      #MYSQL_USER: root # MySQL 사용자 이름
+      #MYSQL_PASSWORD: 1234 # MySQL 비밀번호
+    ports:
+      - "3306:3306" # MySQL 포트 맵핑
+    volumes:
+      - db-data:/var/lib/mysql # 데이터 지속성을 위해 볼륨 사용
+      - ./Dump20241216.sql:/docker-entrypoint-initdb.d/Dump20241216.sql
+
+volumes:
+  db-data:
+    driver: local # MySQL 데이터를 로컬 볼륨에 저장

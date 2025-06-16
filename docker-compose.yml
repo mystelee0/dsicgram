@@ -22,7 +22,7 @@ services:
     image: mysql:8.0
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 1234 # MySQL root 비밀번호
+      MYSQL_ROOT_PASSWORD:  # MySQL root 비밀번호
       MYSQL_DATABASE: dsic # MySQL 초기 데이터베이스 이름
       #MYSQL_USER: root # MySQL 사용자 이름
       #MYSQL_PASSWORD: 1234 # MySQL 비밀번호

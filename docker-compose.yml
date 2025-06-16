@@ -14,7 +14,7 @@ services:
       - DB_PORT=3306
       - DB_NAME=dsic # MySQL 데이터베이스 이름
       - DB_USER=root # MySQL 사용자 이름
-      - DB_PASSWORD=1234 # MySQL 비밀번호
+      - DB_PASSWORD= # MySQL 비밀번호
     depends_on:
       - db  # mysql 서비스가 먼저 실행되어야 함
   

@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #- uses: actions/checkout@v4
+    - uses: actions/checkout@v4
     - name: Run pwd
       run: pwd
     - name: Run ls -al
       run: ls -al
+    - name: echo info
+      run: echo ${{github.repository}} ${{github.ref}} ${{github.actor}}
